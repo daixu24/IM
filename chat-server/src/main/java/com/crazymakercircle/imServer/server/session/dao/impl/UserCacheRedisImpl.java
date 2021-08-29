@@ -12,9 +12,7 @@ import org.springframework.util.StringUtils;
 
 import java.util.concurrent.TimeUnit;
 
-/**
- * create by 尼恩 @ 疯狂创客圈
- **/
+
 @Repository("UserCacheRedisImpl")
 public class UserCacheRedisImpl implements UserCacheDAO
 {

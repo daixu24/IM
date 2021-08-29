@@ -15,9 +15,7 @@ import org.springframework.data.redis.core.RedisTemplate;
 
 import java.lang.reflect.Method;
 
-/**
- * create by 尼恩 @ 疯狂创客圈
- **/
+
 @Slf4j
 @Configuration
 @EnableCaching

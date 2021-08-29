@@ -9,8 +9,7 @@ import io.netty.handler.codec.MessageToByteEncoder;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * create by 尼恩 @ 疯狂创客圈
- * <p>
+
  * 编码器
  */
 

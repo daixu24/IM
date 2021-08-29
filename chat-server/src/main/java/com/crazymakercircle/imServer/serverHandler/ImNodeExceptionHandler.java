@@ -5,9 +5,7 @@ import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 import lombok.extern.slf4j.Slf4j;
 
-/**
- * create by 尼恩 @ 疯狂创客圈
- **/
+
 @Slf4j
 @ChannelHandler.Sharable
 public class ImNodeExceptionHandler extends ChannelInboundHandlerAdapter

@@ -2,9 +2,7 @@ package com.crazymakercircle.constants;
 
 import io.netty.util.AttributeKey;
 
-/**
- * create by 尼恩 @ 疯狂创客圈
- **/
+
 public class ServerConstants
 {
 

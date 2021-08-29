@@ -1,8 +1,6 @@
 package com.crazymakercircle.start;
 
-/**
- * create by 尼恩 @ 疯狂创客圈
- **/
+
 
 
 import com.google.common.base.Predicate;

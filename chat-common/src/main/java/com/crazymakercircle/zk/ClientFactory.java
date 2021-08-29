@@ -5,9 +5,7 @@ import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.CuratorFrameworkFactory;
 import org.apache.curator.retry.ExponentialBackoffRetry;
 
-/**
- * create by 尼恩 @ 疯狂创客圈
- **/
+
 public class ClientFactory
 {
 

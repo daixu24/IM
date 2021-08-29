@@ -13,7 +13,7 @@ import java.util.Map;
 /**
  * The class Base controller.
  *
- * @author paascloud.net@gmail.com
+
  */
 
 @Slf4j

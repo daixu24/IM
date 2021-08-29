@@ -6,7 +6,6 @@ import com.crazymakercircle.imClient.client.ClientSession;
 /**
  * 基础 Builder
  *
- * @author 尼恩 at  疯狂创客圈
  */
 public class BaseBuilder
 {

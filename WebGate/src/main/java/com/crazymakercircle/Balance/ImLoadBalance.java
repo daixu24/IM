@@ -12,9 +12,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/**
- * create by 尼恩 @ 疯狂创客圈
- **/
+
 @Data
 @Slf4j
 public class ImLoadBalance

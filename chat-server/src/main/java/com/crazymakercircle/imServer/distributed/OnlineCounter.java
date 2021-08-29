@@ -11,7 +11,7 @@ import org.apache.curator.retry.RetryNTimes;
 
 /**
  * 分布式计数器
- * create by 尼恩 @ 疯狂创客圈
+
  **/
 @Data
 //在线用户统计

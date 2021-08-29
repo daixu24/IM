@@ -8,9 +8,7 @@ import io.netty.channel.ChannelInboundHandlerAdapter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
-/**
- * create by 尼恩 @ 疯狂创客圈
- **/
+
 @Slf4j
 @ChannelHandler.Sharable
 @Service("ServerExceptionHandler")

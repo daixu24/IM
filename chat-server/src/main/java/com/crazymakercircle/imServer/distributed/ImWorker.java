@@ -12,7 +12,7 @@ import org.apache.zookeeper.data.Stat;
 
 /**
  * IM 节点的ZK协调客户端
- * create by 尼恩 @ 疯狂创客圈
+
  **/
 //节点命名服务等
 @Data

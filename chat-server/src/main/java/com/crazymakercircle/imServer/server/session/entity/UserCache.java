@@ -5,9 +5,7 @@ import lombok.Data;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-/**
- * create by 尼恩 @ 疯狂创客圈
- **/
+
 @Data
 public class UserCache
 {

@@ -8,9 +8,7 @@ import org.apache.curator.utils.CloseableUtils;
 import org.apache.zookeeper.CreateMode;
 import org.apache.zookeeper.data.Stat;
 
-/**
- * create by 尼恩 @ 疯狂创客圈
- **/
+
 @Slf4j
 @Data
 public class CuratorZKclient

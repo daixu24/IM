@@ -24,11 +24,7 @@ import redis.clients.jedis.JedisPoolConfig;
 import java.lang.reflect.Method;
 import java.time.Duration;
 
-/**
- * Redis 配置.
- *
- * @author 尼恩
- */
+
 @Configuration
 @AutoConfigureBefore(RedisAutoConfiguration.class)
 public class CustomedRedisAutoConfiguration

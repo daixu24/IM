@@ -5,7 +5,7 @@ import feign.RequestLine;
 
 /**
  * 远程接口的本地代理
- * Created by 尼恩 at 疯狂创客圈
+
  */
 public interface UserAction
 {

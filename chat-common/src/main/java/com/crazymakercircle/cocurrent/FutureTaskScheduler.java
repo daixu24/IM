@@ -1,9 +1,6 @@
 package com.crazymakercircle.cocurrent;
 
 
-/**
- * Created by 尼恩 at 疯狂创客圈
- */
 
 import com.crazymakercircle.util.ThreadUtil;
 import lombok.extern.slf4j.Slf4j;

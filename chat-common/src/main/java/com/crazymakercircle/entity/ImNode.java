@@ -7,7 +7,7 @@ import java.util.Objects;
 
 /**
  * IM节点的POJO类
- * create by 尼恩 @ 疯狂创客圈
+
  **/
 @Data
 

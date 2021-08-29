@@ -38,6 +38,5 @@ public class ClientApplication
             e.printStackTrace();
         }
     }
-
-
+    
 }

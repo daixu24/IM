@@ -25,7 +25,7 @@ import io.swagger.annotations.ApiOperation;
 
 /**
  * WEB GATE
- * Created by 尼恩 at 疯狂创客圈
+
  */
 
 //@EnableAutoConfiguration

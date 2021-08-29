@@ -6,9 +6,7 @@ import lombok.Data;
 
 import java.io.Serializable;
 
-/**
- * create by 尼恩 @ 疯狂创客圈
- **/
+
 @Data
 @Builder
 public class SessionCache implements Serializable

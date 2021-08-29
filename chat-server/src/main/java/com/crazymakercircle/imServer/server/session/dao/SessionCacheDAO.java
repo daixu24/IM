@@ -5,7 +5,7 @@ import com.crazymakercircle.imServer.server.session.entity.SessionCache;
 
 /**
  * 会话管理  DAO
- * create by 尼恩 @ 疯狂创客圈
+
  **/
 public interface SessionCacheDAO
 {

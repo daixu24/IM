@@ -1,8 +1,6 @@
 package com.crazymakercircle.imServer.server.session;
 
-/**
- * create by 尼恩 @ 疯狂创客圈
- **/
+
 public interface ServerSession
 {
     void writeAndFlush(Object pkg);
