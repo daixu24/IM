@@ -1,6 +1,7 @@
 package com.crazymakercircle.imServer.serverHandler;
 
 import com.crazymakercircle.cocurrent.FutureTaskScheduler;
+import com.crazymakercircle.constants.ServerConstants;
 import com.crazymakercircle.im.common.bean.msg.ProtoMsg;
 import com.crazymakercircle.imServer.server.session.LocalSession;
 import com.crazymakercircle.imServer.server.session.ServerSession;
@@ -58,11 +59,11 @@ public class ChatRedirectHandler extends ChannelInboundHandlerAdapter
             LocalSession session = LocalSession.getSession(ctx);
             if (null != session && session.isLogin())
             {
-
+                log.info("11111111");
                 redirectProcesser.action(session, pkg);
                 return;
             }
-
+            log.info("22222222");
             //没有登录，则为中转消息
             ProtoMsg.MessageRequest request = pkg.getMessageRequest();
             List<ServerSession> toSessions = SessionManger.inst().getSessionsBy(request.getTo());

@@ -188,6 +188,7 @@ public class PeerSender
             log.error("分布式节点未连接:", rmNode.toString());
             return;
         }
+        log.info("555555555");
         channel.writeAndFlush(pkg);
     }
 
