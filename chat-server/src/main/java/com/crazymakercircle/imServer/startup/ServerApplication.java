@@ -2,6 +2,7 @@ package com.crazymakercircle.imServer.startup;
 
 import com.crazymakercircle.imServer.server.ChatServer;
 import com.crazymakercircle.imServer.server.session.service.SessionManger;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -16,6 +17,8 @@ import org.springframework.context.annotation.Configuration;
 //使包路径下带有@Autowired的类可以自动注入
 @ComponentScan("com.crazymakercircle")
 @SpringBootApplication
+@MapperScan(basePackages = "com.crazymakercircle.imServer.model.dao")
+
 public class ServerApplication
 {
 
@@ -24,7 +27,11 @@ public class ServerApplication
      */
     public static void main(String[] args)
     {
+
+    //    SpringApplication.run(ServerApplication.class, args);
+
         // 启动并初始化 Spring 环境及其各 Spring 组件
+
         ApplicationContext context =
                 SpringApplication.run(ServerApplication.class, args);
         /**

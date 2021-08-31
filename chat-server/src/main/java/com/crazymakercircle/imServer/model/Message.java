@@ -1,18 +1,28 @@
 package com.crazymakercircle.imServer.model;
 
 public class Message {
-    private String id;
+    private String mesId;
+
+    private String toId;
 
     private String fromId;
 
     private String content;
 
-    public String getId() {
-        return id;
+    public String getMesId() {
+        return mesId;
     }
 
-    public void setId(String id) {
-        this.id = id == null ? null : id.trim();
+    public void setMesId(String mesId) {
+        this.mesId = mesId == null ? null : mesId.trim();
+    }
+
+    public String getToId() {
+        return toId;
+    }
+
+    public void setToId(String toId) {
+        this.toId = toId == null ? null : toId.trim();
     }
 
     public String getFromId() {

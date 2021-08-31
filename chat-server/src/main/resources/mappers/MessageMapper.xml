@@ -2,34 +2,38 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.crazymakercircle.imServer.model.dao.MessageMapper">
   <resultMap id="BaseResultMap" type="com.crazymakercircle.imServer.model.Message">
-    <id column="id" jdbcType="VARCHAR" property="id" />
+    <id column="mes_id" jdbcType="VARCHAR" property="mesId" />
+    <result column="to_id" jdbcType="VARCHAR" property="toId" />
     <result column="from_id" jdbcType="VARCHAR" property="fromId" />
     <result column="content" jdbcType="VARCHAR" property="content" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, from_id, content
+    mes_id, to_id, from_id, content
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from message
-    where id = #{id,jdbcType=VARCHAR}
+    where mes_id = #{mesId,jdbcType=VARCHAR}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
     delete from message
-    where id = #{id,jdbcType=VARCHAR}
+    where mes_id = #{mesId,jdbcType=VARCHAR}
   </delete>
   <insert id="insert" parameterType="com.crazymakercircle.imServer.model.Message">
-    insert into message (id, from_id, content
-      )
-    values (#{id,jdbcType=VARCHAR}, #{fromId,jdbcType=VARCHAR}, #{content,jdbcType=VARCHAR}
-      )
+    insert into message (mes_id, to_id, from_id, 
+      content)
+    values (#{mesId,jdbcType=VARCHAR}, #{toId,jdbcType=VARCHAR}, #{fromId,jdbcType=VARCHAR}, 
+      #{content,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.crazymakercircle.imServer.model.Message">
     insert into message
     <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        id,
+      <if test="mesId != null">
+        mes_id,
+      </if>
+      <if test="toId != null">
+        to_id,
       </if>
       <if test="fromId != null">
         from_id,
@@ -39,8 +43,11 @@
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        #{id,jdbcType=VARCHAR},
+      <if test="mesId != null">
+        #{mesId,jdbcType=VARCHAR},
+      </if>
+      <if test="toId != null">
+        #{toId,jdbcType=VARCHAR},
       </if>
       <if test="fromId != null">
         #{fromId,jdbcType=VARCHAR},
@@ -53,6 +60,9 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.crazymakercircle.imServer.model.Message">
     update message
     <set>
+      <if test="toId != null">
+        to_id = #{toId,jdbcType=VARCHAR},
+      </if>
       <if test="fromId != null">
         from_id = #{fromId,jdbcType=VARCHAR},
       </if>
@@ -60,12 +70,13 @@
         content = #{content,jdbcType=VARCHAR},
       </if>
     </set>
-    where id = #{id,jdbcType=VARCHAR}
+    where mes_id = #{mesId,jdbcType=VARCHAR}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.crazymakercircle.imServer.model.Message">
     update message
-    set from_id = #{fromId,jdbcType=VARCHAR},
+    set to_id = #{toId,jdbcType=VARCHAR},
+      from_id = #{fromId,jdbcType=VARCHAR},
       content = #{content,jdbcType=VARCHAR}
-    where id = #{id,jdbcType=VARCHAR}
+    where mes_id = #{mesId,jdbcType=VARCHAR}
   </update>
 </mapper>
