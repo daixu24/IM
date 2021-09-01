@@ -2,7 +2,7 @@ package com.crazymakercircle.imServer.service.impl;
 
 
 import com.crazymakercircle.imServer.model.OffMessage;
-import com.crazymakercircle.imServer.model.dao.*;
+import com.crazymakercircle.imServer.model.dao.OffMessageMapper;
 import com.crazymakercircle.imServer.service.OffMessageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import lombok.extern.slf4j.Slf4j;

@@ -34,6 +34,7 @@ public class BaseBuilder
                         .setType(type)
                         .setSessionId(session.getSessionId())
                         .setSequence(seqId);
+
         return mb.buildPartial();
     }
 

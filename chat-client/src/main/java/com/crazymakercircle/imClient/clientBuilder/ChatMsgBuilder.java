@@ -9,6 +9,8 @@ import com.crazymakercircle.im.common.bean.UserDTO;
 import com.crazymakercircle.im.common.bean.msg.ProtoMsg;
 import com.crazymakercircle.imClient.client.ClientSession;
 
+import java.util.UUID;
+
 /**
  * 聊天消息Builder
  */
@@ -35,6 +37,8 @@ public class ChatMsgBuilder extends BaseBuilder
 
     public ProtoMsg.Message build()
     {
+        //序列号设置
+
         ProtoMsg.Message message = buildCommon(-1);
         ProtoMsg.MessageRequest.Builder cb
                 = ProtoMsg.MessageRequest.newBuilder();

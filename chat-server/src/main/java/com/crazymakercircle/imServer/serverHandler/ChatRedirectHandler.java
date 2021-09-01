@@ -13,6 +13,7 @@ import io.netty.channel.ChannelInboundHandlerAdapter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import com.crazymakercircle.imServer.rabbitMQ.MQSender;
 
 import java.util.List;
 
@@ -27,6 +28,9 @@ public class ChatRedirectHandler extends ChannelInboundHandlerAdapter
 
     @Autowired
     SessionManger sessionManger;
+
+
+
 
     /**
      * 收到消息
@@ -56,6 +60,8 @@ public class ChatRedirectHandler extends ChannelInboundHandlerAdapter
             //判断是否登录,如果登录了，则为用户消息
             //确实有session信息，没有下线
             //这里还只实现了local的  远程的还没实现
+
+            //存储的时候只存储一次，在客户所连接服务器处理
             LocalSession session = LocalSession.getSession(ctx);
             if (null != session && session.isLogin())
             {

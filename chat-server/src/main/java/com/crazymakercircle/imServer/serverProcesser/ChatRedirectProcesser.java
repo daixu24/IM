@@ -1,12 +1,15 @@
 package com.crazymakercircle.imServer.serverProcesser;
 
 import com.crazymakercircle.im.common.bean.msg.ProtoMsg;
+import com.crazymakercircle.imServer.model.OffMessage;
 import com.crazymakercircle.imServer.server.session.LocalSession;
 import com.crazymakercircle.imServer.server.session.ServerSession;
 import com.crazymakercircle.imServer.server.session.service.SessionManger;
 import com.crazymakercircle.util.Logger;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import com.crazymakercircle.imServer.rabbitMQ.MQSender;
 
 import java.util.List;
 
@@ -15,6 +18,8 @@ import java.util.List;
 public class ChatRedirectProcesser extends AbstractServerProcesser {
 
     public static final int RE_DIRECT = 1;
+    @Autowired
+    MQSender mqSender;
 
     @Override
     public ProtoMsg.HeadType op() {
@@ -35,9 +40,14 @@ public class ChatRedirectProcesser extends AbstractServerProcesser {
         String to = messageRequest.getTo();
         // int platform = messageRequest.getPlatform();
         List<ServerSession> toSessions = SessionManger.inst().getSessionsBy(to);
+
+        //目前版本  先将离线消息存下来即可， 在线的话就不存了，直接发送，下个版本才开发历史消息库
         if (toSessions == null) {
-            //接收方离线
-            Logger.tcfo("[" + to + "] 不在线，需要保存为离线消息，请保存到nosql如mongo中!");
+            //接收方离线  给MQ发送消息   存储即可
+            log.info("开始使用MQ保存到数据库中");
+            mqSender.sendSImMessage(new OffMessage(String.valueOf(messageRequest.getMsgId()), messageRequest.getTo(), messageRequest.getFrom(),messageRequest.getContent()));
+            Logger.tcfo("[" + to + "] 不在线，已经保存到数据库中 等待用户拉取!");
+
         } else {
 
             toSessions.forEach((session) ->

@@ -40,4 +40,15 @@ public class OffMessage {
     public void setContent(String content) {
         this.content = content == null ? null : content.trim();
     }
+
+    public OffMessage(String mesId, String toId, String fromId, String content){
+
+        this.mesId = mesId;
+        this.toId = toId;
+        this.fromId = fromId;
+        this.content = content;
+
+    }
+
+
 }

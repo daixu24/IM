@@ -32,6 +32,11 @@ public class ChatMsg
 
     }
 
+    public ChatMsg(){
+
+    }
+
+
     private UserDTO user;
 
     private long msgId;

@@ -1,7 +1,9 @@
 package com.crazymakercircle.imServer.model.dao;
 
 import com.crazymakercircle.imServer.model.Message;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface MessageMapper {
     int deleteByPrimaryKey(String mesId);
 
